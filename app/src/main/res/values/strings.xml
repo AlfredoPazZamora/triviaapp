@@ -1,3 +1,39 @@
 <resources>
     <string name="app_name">Trivia app</string>
+
+    <array name="questions">
+
+        <item>Question 1</item>
+        <item>Question 2</item>
+        <item>Question 3</item>
+        <item>Question 4</item>
+        <item>Question 5</item>
+        <item>Question 6</item>
+
+    </array>
+
+    <array name="correct_answers">
+
+        <item>Correct 1</item>
+        <item>Correct 2</item>
+        <item>Correct 3</item>
+        <item>Correct 4</item>
+        <item>Correct 5</item>
+        <item>Correct 6</item>
+
+    </array>
+
+    <array name="incorrect_answer">
+
+        <item>Incorrect 1</item>
+        <item>Incorrect 2</item>
+        <item>Incorrect 3</item>
+        <item>Incorrect 4</item>
+        <item>Incorrect 5</item>
+        <item>Incorrect 6</item>
+        <item>Incorrect 7</item>
+        <item>Incorrect 8</item>
+        <item>Incorrect 9</item>
+
+    </array>
 </resources>
