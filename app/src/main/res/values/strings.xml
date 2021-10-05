@@ -6,9 +6,6 @@
         <item>Question 1</item>
         <item>Question 2</item>
         <item>Question 3</item>
-        <item>Question 4</item>
-        <item>Question 5</item>
-        <item>Question 6</item>
 
     </array>
 
@@ -17,23 +14,32 @@
         <item>Correct 1</item>
         <item>Correct 2</item>
         <item>Correct 3</item>
-        <item>Correct 4</item>
-        <item>Correct 5</item>
-        <item>Correct 6</item>
 
     </array>
 
-    <array name="incorrect_answer">
+    <array name="incorrect_answer_question1">
 
-        <item>Incorrect 1</item>
-        <item>Incorrect 2</item>
-        <item>Incorrect 3</item>
-        <item>Incorrect 4</item>
-        <item>Incorrect 5</item>
-        <item>Incorrect 6</item>
-        <item>Incorrect 7</item>
-        <item>Incorrect 8</item>
-        <item>Incorrect 9</item>
+        <item>Incorrect 11</item>
+        <item>Incorrect 21</item>
+        <item>Incorrect 31</item>
 
     </array>
+
+    <array name="incorrect_answer_question2">
+
+        <item>Incorrect 12</item>
+        <item>Incorrect 22</item>
+        <item>Incorrect 32</item>
+
+    </array>
+
+    <array name="incorrect_answer_question3">
+
+        <item>Incorrect 13</item>
+        <item>Incorrect 23</item>
+        <item>Incorrect 33</item>
+
+    </array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

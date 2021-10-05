@@ -58,6 +58,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/text_question"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@+id/number_question"
@@ -66,7 +67,7 @@
 
                     android:textSize="20sp"
                     android:textColor="@color/white"
-                    android:text="¿Which of the next options are programming language for Android Native apps?"
+                    tools:text="Example"
                     />
 
             </RelativeLayout>

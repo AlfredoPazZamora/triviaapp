@@ -66,6 +66,7 @@
                 android:layout_marginVertical="20dp"
                 android:padding="15sp"
                 android:textColorHint="@color/white"
+                android:textColor="@color/white"
                 android:hint="Give my your name"
                 android:background="@drawable/bg_edittext"
                 />
