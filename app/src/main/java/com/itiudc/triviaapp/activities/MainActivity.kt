@@ -32,10 +32,8 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(AnswerViewModel::class.java)
 
         showQuestion(stringResource, binding)
-
+        updateProgress(binding)
         answerListAdapter = AnswerListAdapter(answersList)
-        binding.answersList.layoutManager = LinearLayoutManager(this)
-        binding.answersList.adapter = answerListAdapter
 
 
         answerListAdapter.onAnswerClick = {
@@ -52,11 +50,19 @@ class MainActivity : AppCompatActivity() {
                 Log.i("edg", "NO MORE QUESTIONS")
             }
             showQuestion(stringResource, binding)
+            updateProgress(binding)
         }
+
+        binding.answersList.layoutManager = LinearLayoutManager(this)
+        binding.answersList.adapter = answerListAdapter
 
     }
 
-    fun showQuestion(stringResource: Resources, binding: ActivityMainBinding): MutableList<Answer> {
+    private fun updateProgress(binding: ActivityMainBinding) {
+        binding.infoProgress.text = "${currentAnswer + 1}/3"
+    }
+
+    fun showQuestion(stringResource: Resources, binding: ActivityMainBinding) {
         //Show random question to strings
         val questionText = stringResource.getStringArray(R.array.questions)[currentAnswer]
 
@@ -109,7 +115,7 @@ class MainActivity : AppCompatActivity() {
             randomNumber,Answer(true, correctAnswerText)
         )
 
-        return answersList
+
 
     }
 }

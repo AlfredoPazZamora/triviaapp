@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="questions">
+
+        <item>Pregunta 1</item>
+        <item>Pregunta 2</item>
+        <item>Pregunta 3</item>
+
+    </array>
+
+    <array name="correct_answers">
+
+        <item>Respuesta correcta 1</item>
+        <item>Respuesta correcta 2</item>
+        <item>Respuesta correcta 3</item>
+
+    </array>
+
+    <array name="incorrect_answer_question1">
+
+        <item>Respuesta incorrecta 11</item>
+        <item>Respuesta incorrecta 21</item>
+        <item>Respuesta incorrecta 31</item>
+
+    </array>
+
+    <array name="incorrect_answer_question2">
+
+        <item>Respuesta incorrecta 12</item>
+        <item>Respuesta incorrecta 22</item>
+        <item>Respuesta incorrecta 32</item>
+
+    </array>
+
+    <array name="incorrect_answer_question3">
+
+        <item>Respuesta incorrecta 13</item>
+        <item>Respuesta incorrecta 23</item>
+        <item>Respuesta incorrecta 33</item>
+
+    </array>
+</resources>
