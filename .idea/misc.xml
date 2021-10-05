@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/alfre/AndroidStudioProjects/Triviaapp/app/src/main/res/drawable/bg_button_answer.xml" value="0.240625" />
         <entry key="..\:/Users/alfre/AndroidStudioProjects/Triviaapp/app/src/main/res/drawable/bg_button_login.xml" value="0.240625" />
         <entry key="..\:/Users/alfre/AndroidStudioProjects/Triviaapp/app/src/main/res/drawable/bg_edittext.xml" value="0.240625" />
         <entry key="..\:/Users/alfre/AndroidStudioProjects/Triviaapp/app/src/main/res/layout/activity_login.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/alfre/AndroidStudioProjects/Triviaapp/app/src/main/res/layout/activity_main.xml" value="0.12771739130434784" />
         <entry key="..\:/Users/alfre/AndroidStudioProjects/Triviaapp/app/src/main/res/layout/activity_splash.xml" value="0.12771739130434784" />
+        <entry key="..\:/Users/alfre/AndroidStudioProjects/Triviaapp/app/src/main/res/layout/answers_list_item.xml" value="0.19067028985507245" />
       </map>
     </option>
   </component>
