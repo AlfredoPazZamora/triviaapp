@@ -13,6 +13,7 @@
         tools:context=".activities.LoginActivity">
 
         <ImageView
+            android:id="@+id/bg_login"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
@@ -20,12 +21,32 @@
             android:src="@drawable/img_bg_bricks"
             />
 
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_centerInParent="true"
+            android:paddingBottom="20dp"
             >
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:src="@drawable/img_logo_trivia"
+                android:layout_gravity="center"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="Welcome"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -35,28 +56,51 @@
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
-                android:text="Hola"
+                android:text="You wanna play?"
                 />
 
             <EditText
+                android:id="@+id/input_name"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="20dp"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="15dp"
+                android:padding="15sp"
                 android:textColorHint="@color/white"
+                android:hint="Give my your name"
                 android:background="@drawable/bg_edittext"
                 />
 
             <Button
+                android:id="@+id/button_start"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="16sp"
+                android:text="Start"
+                android:textAllCaps="true"
                 android:background="@drawable/bg_button_login"
                 />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/white"
+                android:text="Author: Alfredo Paz Zamora 20164920"
+                />
+
 
         </LinearLayout>
 
