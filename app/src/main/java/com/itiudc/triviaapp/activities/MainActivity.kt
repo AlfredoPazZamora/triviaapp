@@ -33,30 +33,10 @@ class MainActivity : AppCompatActivity() {
 
         showQuestion(stringResource, binding)
         updateProgress(binding)
-        answerListAdapter = AnswerListAdapter(answersList)
 
-
-        answerListAdapter.onAnswerClick = {
-            Log.i("edg", "Is correct answer: ${it.isCorrectAnswer}")
-            if(it.isCorrectAnswer){
-                counterCorrect++
-            }else{
-                counterIncorrect++
-            }
-
-            if (currentAnswer < 2){
-                currentAnswer++
-            }else{
-                Log.i("edg", "NO MORE QUESTIONS")
-            }
-            showQuestion(stringResource, binding)
-            updateProgress(binding)
-        }
-
-        binding.answersList.layoutManager = LinearLayoutManager(this)
-        binding.answersList.adapter = answerListAdapter
 
     }
+
 
     private fun updateProgress(binding: ActivityMainBinding) {
         binding.infoProgress.text = "${currentAnswer + 1}/3"
@@ -115,7 +95,30 @@ class MainActivity : AppCompatActivity() {
             randomNumber,Answer(true, correctAnswerText)
         )
 
+        answerListAdapter = AnswerListAdapter(answersList)
+        binding.answersList.layoutManager = LinearLayoutManager(this)
+        binding.answersList.adapter = answerListAdapter
 
+        answerListAdapter.onAnswerClick = {
+            Log.i("edg", "Is correct answer: ${it.isCorrectAnswer}")
+            if(it.isCorrectAnswer){
+                counterCorrect++
+            }else{
+                counterIncorrect++
+            }
+
+            if (currentAnswer < 2){
+                currentAnswer++
+            }else{
+                Log.i("edg", "NO MORE QUESTIONS")
+            }
+            showQuestion(stringResource, binding)
+            updateProgress(binding)
+        }
+
+        for(value in answersList){
+            Log.i("edg", "respuestas ${value.answerText}")
+        }
 
     }
 }
