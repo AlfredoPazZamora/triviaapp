@@ -13,20 +13,53 @@
         tools:context=".activities.LoginActivity">
 
         <ImageView
-            android:id="@+id/bg_login"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="center"
             android:src="@drawable/img_bg_bricks"
-            tools:src="@drawable/ic_launcher_foreground"
             />
 
-        <ImageView
-            android:layout_width="300dp"
-            android:layout_height="300dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:layout_centerInParent="true"
-            android:src="@drawable/img_logo_trivia"
-            tools:src="@drawable/ic_launcher_foreground"
-            />
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="Hola"
+                />
+
+            <EditText
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="15dp"
+                android:textColorHint="@color/white"
+                android:background="@drawable/bg_edittext"
+                />
+
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:background="@drawable/bg_button_login"
+                />
+
+        </LinearLayout>
+
 
     </RelativeLayout>
 </layout>
