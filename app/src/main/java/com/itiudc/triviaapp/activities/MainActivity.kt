@@ -5,22 +5,58 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.itiudc.triviaapp.R
 import com.itiudc.triviaapp.adapters.AnswerListAdapter
 import com.itiudc.triviaapp.databinding.ActivityMainBinding
 import com.itiudc.triviaapp.models.Answer
+import com.itiudc.triviaapp.viewmodels.AnswerViewModel
 
 class MainActivity : AppCompatActivity() {
 
 
-    val currentAnswer: Int = 0
+    var currentAnswer: Int = 0
+    var counterCorrect: Int = 0
+    var counterIncorrect: Int = 0
+
+    private lateinit var viewModel: AnswerViewModel
+    private lateinit var answersList: MutableList<Answer>
+    private lateinit var answerListAdapter: AnswerListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
         val stringResource: Resources = resources
+        viewModel = ViewModelProvider(this).get(AnswerViewModel::class.java)
+
+        showQuestion(stringResource, binding)
+
+        answerListAdapter = AnswerListAdapter(answersList)
+        binding.answersList.layoutManager = LinearLayoutManager(this)
+        binding.answersList.adapter = answerListAdapter
+
+
+        answerListAdapter.onAnswerClick = {
+            Log.i("edg", "Is correct answer: ${it.isCorrectAnswer}")
+            if(it.isCorrectAnswer){
+                counterCorrect++
+            }else{
+                counterIncorrect++
+            }
+
+            if (currentAnswer < 2){
+                currentAnswer++
+            }else{
+                Log.i("edg", "NO MORE QUESTIONS")
+            }
+            showQuestion(stringResource, binding)
+        }
+
+    }
+
+    fun showQuestion(stringResource: Resources, binding: ActivityMainBinding): MutableList<Answer> {
         //Show random question to strings
         val questionText = stringResource.getStringArray(R.array.questions)[currentAnswer]
 
@@ -29,8 +65,6 @@ class MainActivity : AppCompatActivity() {
         //Show Answers
         val correctAnswerText =
             stringResource.getStringArray(R.array.correct_answers)[currentAnswer]
-
-
 
         var incorrectAnswerText1 = ""
         var incorrectAnswerText2 = ""
@@ -65,7 +99,7 @@ class MainActivity : AppCompatActivity() {
 
         val randomNumber = (0..2).random()
 
-        var answersList =  mutableListOf(
+        answersList =  mutableListOf(
             Answer(false, incorrectAnswerText1),
             Answer(false, incorrectAnswerText2),
             Answer(false, incorrectAnswerText3)
@@ -75,16 +109,7 @@ class MainActivity : AppCompatActivity() {
             randomNumber,Answer(true, correctAnswerText)
         )
 
-
-        val answerListAdapter = AnswerListAdapter(answersList)
-        binding.answersList.layoutManager = LinearLayoutManager(this)
-        binding.answersList.adapter = answerListAdapter
-
-        answerListAdapter.onAnswerClick = {
-            Log.i("edg", "Is correct answer: ${it.isCorrectAnswer}")
-        }
+        return answersList
 
     }
-
-
 }
