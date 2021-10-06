@@ -39,4 +39,6 @@
         <item>Respuesta incorrecta 33</item>
 
     </array>
+
+    <string name="result_score">Obtuviste %1$s correctas de 3</string>
 </resources>

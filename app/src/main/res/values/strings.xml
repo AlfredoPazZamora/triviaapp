@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name" translatable="false">Trivia app</string>
+    <string name="player_name" translatable="false">%1$s</string>
 
     <array name="questions">
 
@@ -40,5 +41,7 @@
         <item>Incorrect 33</item>
 
     </array>
+
+    <string name="result_score">You got %1$s hits out of 3</string>
 
 </resources>

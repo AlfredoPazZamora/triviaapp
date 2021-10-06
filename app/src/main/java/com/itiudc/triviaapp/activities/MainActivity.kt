@@ -1,5 +1,6 @@
 package com.itiudc.triviaapp.activities
 
+import android.content.Intent
 import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,13 +17,18 @@ import com.itiudc.triviaapp.viewmodels.AnswerViewModel
 class MainActivity : AppCompatActivity() {
 
 
-    var currentAnswer: Int = 0
+    private var currentAnswer: Int = 0
     var counterCorrect: Int = 0
-    var counterIncorrect: Int = 0
+    private var counterIncorrect: Int = 0
+    lateinit var name: String
 
     private lateinit var viewModel: AnswerViewModel
     private lateinit var answersList: MutableList<Answer>
     private lateinit var answerListAdapter: AnswerListAdapter
+
+    companion object{
+        const val NAME_KEY = "player_name"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +36,14 @@ class MainActivity : AppCompatActivity() {
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
         val stringResource: Resources = resources
         viewModel = ViewModelProvider(this).get(AnswerViewModel::class.java)
+
+        val bundle: Bundle? = intent.extras
+
+        if (bundle != null){
+            val nameToLogin = bundle.getString(NAME_KEY)
+            binding.playerName.text = nameToLogin
+
+        }
 
         showQuestion(stringResource, binding)
         updateProgress(binding)
@@ -39,7 +53,9 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun updateProgress(binding: ActivityMainBinding) {
-        binding.infoProgress.text = "${currentAnswer + 1}/3"
+
+        binding.infoProgress.text = "${currentAnswer + 1} /3"
+        binding.numberQuestion.text = "${currentAnswer + 1}"
     }
 
     fun showQuestion(stringResource: Resources, binding: ActivityMainBinding) {
@@ -110,7 +126,15 @@ class MainActivity : AppCompatActivity() {
             if (currentAnswer < 2){
                 currentAnswer++
             }else{
-                Log.i("edg", "NO MORE QUESTIONS")
+                val scoreText = stringResource.getString(R.string.result_score, counterCorrect.toString())
+                val nameText = binding.playerName.text
+                val intent = Intent(this, ResultActivity::class.java).apply {
+                    putExtra(ResultActivity.SCORE_KEY, scoreText)
+                    putExtra(ResultActivity.NAME_KEY_RESULT, nameText)
+
+                }
+                startActivity(intent)
+                Log.i("edg", "Name: $name")
             }
             showQuestion(stringResource, binding)
             updateProgress(binding)
